@@ -1,5 +1,6 @@
 import HomePage from "../page-objects/homePage";
 import AccountPage from "../page-objects/myAccountPage";
+import { faker } from "@faker-js/faker";
 
 describe('my first scenario', () => {
     const homePage = new HomePage();
@@ -17,10 +18,20 @@ describe('my first scenario', () => {
     accountPage.fillUsernameFieldWithEmail(this.userData.email)
     accountPage.fillPasswordField(this.userData.password)
     accountPage.clickLoginButton()
+    accountPage.checkMyAccountNavigationVisibility()
   });
 
-    it('should not login to the application', () => {
+ //before(() => {
+ // cy.clearAllCookies()
+//})
 
+    it('should not login to the application', () => {
+      homePage.visitHomePage()
+      homePage.clickMyAccountButton()
+      accountPage.fillUsernameFieldWithEmail(faker.internet.email())
+      accountPage.fillPasswordField(faker.internet.password())
+      accountPage.clickLoginButton()
+      accountPage.checkVisibilityOfErrorAfterWrongLogin()
     })
 
 

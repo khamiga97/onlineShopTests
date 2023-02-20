@@ -3,6 +3,8 @@ import Urls from "./urls"
 const usernameEmailField = '#username'
 const passwordField = '#password'
 const loginButton = 'button[name="login"]'
+const myAccountNavigation = '.woocommerce-MyAccount-navigation'
+const errorAfterWrongLogin = 'ul[role="alert"]'
 
 class AccountPage {
 
@@ -16,6 +18,14 @@ class AccountPage {
 
     clickLoginButton() {
         cy.get(loginButton).click()
+    }
+
+    checkMyAccountNavigationVisibility() {
+        cy.get(myAccountNavigation).should('be.be.visible')
+    }
+
+    checkVisibilityOfErrorAfterWrongLogin() {
+        cy.get(errorAfterWrongLogin).should('be.visible')
     }
 
     visitPage() {
