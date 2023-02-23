@@ -6,10 +6,8 @@ describe('my first scenario', () => {
     const homePage = new HomePage();
     const accountPage = new AccountPage();
 
-  before(function () {
-    cy.fixture('users').then(function(users) {
-      this.userData = users;
-    });
+  before(() => {
+    cy.fixture('users').as('userData')
   });
 
   it('should login to the application', function () {
@@ -20,10 +18,6 @@ describe('my first scenario', () => {
     accountPage.clickLoginButton()
     accountPage.checkMyAccountNavigationVisibility()
   });
-
- //before(() => {
- // cy.clearAllCookies()
-//})
 
     it('should not login to the application', () => {
       homePage.visitHomePage()
