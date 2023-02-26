@@ -3,6 +3,7 @@ import { Product } from "./homePage";
 const productName = '.product-name'
 const removeItemButton = '.remove'
 const emptyCartAlert = '.cart-empty.woocommerce-info'
+const goToPaymentsButton = '.wc-proceed-to-checkout'
 
 class CartPage {
 
@@ -16,6 +17,10 @@ class CartPage {
 
     checkThatCartIsEmpty() {
         cy.get(emptyCartAlert).should('exist')
+    }
+
+    clickGoToThePaymentsButton() {
+        cy.get(goToPaymentsButton).click()
     }
 
 }
