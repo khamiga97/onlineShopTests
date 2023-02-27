@@ -4,6 +4,21 @@ const myAccountButton = '#menu-item-100'
 const dataBlockNameNew = 'div[data-block-name="woocommerce/product-new"]' 
 const checkCartFromProductLevel = '.added_to_cart.wc-forward'
 
+function getRandom(min, max) {
+    const floatRandom = Math.random()
+  
+    const difference = max - min
+  
+    // random between 0 and the difference
+    const random = Math.round(difference * floatRandom)
+  
+    const randomWithinRange = random + min
+  
+    return randomWithinRange
+  }
+  
+  export var randomCloth = getRandom(0, 2);
+
 
 /*export const Product = {
     HoodieWithZipper: {
@@ -22,13 +37,15 @@ const checkCartFromProductLevel = '.added_to_cart.wc-forward'
 
 class HomePage {
 
+
+
     clickMyAccountButton() {
         cy.get(myAccountButton).click()
     }
 
     addProductToCart() {
         cy.get(dataBlockNameNew).within(() => {
-            cy.get(products[2].Locator).click()
+            cy.get(products[randomCloth].Locator).click()
         })
     }
 

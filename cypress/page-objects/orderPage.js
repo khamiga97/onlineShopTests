@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
-import HomePage, { Product } from "./homePage";
+import { randomCloth } from "./homePage";
+import { products } from "../fixtures/products";
 
 const firstNameField = '#billing_first_name'
 const lastNameField = '#billing_last_name'
@@ -11,6 +12,7 @@ const phoneField = '#billing_phone'
 const emailField = '#billing_email'
 const finishOrderButton = '#place_order'
 const countryDropdownPoland = 'Polska'
+const orderedProductName = '.woocommerce-table__product-name.product-name'
 
 class OrderPage {
 
@@ -29,7 +31,7 @@ class OrderPage {
         cy.get(finishOrderButton).click()
     }
      checkOrderFinished() {
-         cy.contains("Zamówienie otrzymane", {timeout: 20000}).should('exist')
+         cy.get(orderedProductName, {timeout: 10000}).should('contain', products[randomCloth].Name)
     }
   
 

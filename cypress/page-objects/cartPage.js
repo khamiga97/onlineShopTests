@@ -1,3 +1,4 @@
+import { randomCloth } from "./homePage"
 import { products } from "../fixtures/products"
 const productName = '.product-name'
 const removeItemButton = '.remove'
@@ -7,7 +8,7 @@ const goToPaymentsButton = '.wc-proceed-to-checkout'
 class CartPage {
 
     checkThatAddedProductIsInCart() {
-        cy.get(productName).contains(products[2].Name).should('exist')
+        cy.get(productName).contains(products[randomCloth].Name).should('exist')
     }
 
     removeItemFromCart() {
