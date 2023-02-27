@@ -1,5 +1,4 @@
-import { Product } from "./homePage";
-
+import { products } from "../fixtures/products"
 const productName = '.product-name'
 const removeItemButton = '.remove'
 const emptyCartAlert = '.cart-empty.woocommerce-info'
@@ -8,7 +7,7 @@ const goToPaymentsButton = '.wc-proceed-to-checkout'
 class CartPage {
 
     checkThatAddedProductIsInCart() {
-        cy.get(productName).contains(Product.HoodieWithZipper.Name).should('exist')
+        cy.get(productName).contains(products[2].Name).should('exist')
     }
 
     removeItemFromCart() {
