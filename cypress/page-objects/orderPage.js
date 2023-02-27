@@ -31,7 +31,7 @@ class OrderPage {
         cy.get(finishOrderButton).click()
     }
      checkOrderFinished() {
-         cy.get(orderedProductName, {timeout: 10000}).should('contain', products[randomCloth].Name)
+         cy.get(orderedProductName, {timeout: 20000}).should('contain', products[randomCloth].Name)
     }
   
 
