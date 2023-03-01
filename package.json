@@ -7,11 +7,19 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@faker-js/faker": "^7.6.0"
   },
   "devDependencies": {
     "cypress": "^12.7.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khamiga97/onlineShopTests.git"
+  },
+  "bugs": {
+    "url": "https://github.com/khamiga97/onlineShopTests/issues"
+  },
+  "homepage": "https://github.com/khamiga97/onlineShopTests#readme",
+  "description": ""
 }
