@@ -1,25 +1,23 @@
 {
   "name": "onlineshop",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
- 
-  "devDependencies": {
-    "cypress": "^12.6.0",
-    "@faker-js/faker": "~7.6.0"
-  },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khamiga97/onlineShopTests.git"
   },
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/khamiga97/onlineShopTests/issues"
   },
   "homepage": "https://github.com/khamiga97/onlineShopTests#readme",
-  "description": ""
+  "devDependencies": {
+    "cypress": "^12.7.0",
+    "@faker-js/faker": "^7.6.0"
+}
 }
