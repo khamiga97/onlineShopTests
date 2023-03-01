@@ -1,23 +1,14 @@
 version: 2.1
-
 orbs:
   cypress: cypress-io/cypress@2.2.0
-
-jobs:
+workflows:
   build:
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-      - run: sudo apt-get install -y nodejs
-      - run: npm install cypress --save-dev
-      - run: npx cypress open
-        parallel: true
-        parallelism: 3
-        environment:
-          CYPRESS_CACHE_FOLDER: /root/.cache/Cypress
-    artifacts:
-      when: always
-      paths:
-        - cypress/videos/**/*
-        - cypress/screenshots/**/*
+    jobs:
+      - cypress/install
+      - cypress/run:
+          requires:
+            - cypress/install
+          store_artifacts: true
+          parallel: true
+          parallelism: 3
+          group: 2 machines
