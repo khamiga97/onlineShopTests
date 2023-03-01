@@ -11,8 +11,8 @@
   "devDependencies": {
     "cypress": "^12.7.0",
     "@faker-js/faker": "~7.6.0"
-
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khamiga97/onlineShopTests.git"
