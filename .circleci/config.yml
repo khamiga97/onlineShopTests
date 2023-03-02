@@ -4,7 +4,8 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install
+      - cypress/install:
+        start-command: 'npm install cypress'
       - cypress/run:
           requires:
             - cypress/install
