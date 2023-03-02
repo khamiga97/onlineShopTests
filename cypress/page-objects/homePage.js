@@ -19,22 +19,6 @@ function getRandom(min, max) {
   
   export var randomCloth = getRandom(0, 2);
 
-
-/*export const Product = {
-    HoodieWithZipper: {
-        Locator: 'a[data-product_id="51"]',
-        Name: 'Hoodie with Zipper'
-    },
-    Polo: {
-        Locator: 'a[data-product_id="53"]',
-        Name: 'Polo'
-    },
-    Sunglasses: {
-        Locator: 'a[data-product_id="49"]',
-        Name: 'Sunglasses'
-    }
-}*/
-
 class HomePage {
 
 
