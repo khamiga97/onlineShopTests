@@ -6,7 +6,6 @@ workflows:
     jobs:
       - cypress/run:
           start-command: 'npm run'
-          parallel: true
           parallelism: 4
 
        - store_artifacts:
