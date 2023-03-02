@@ -7,7 +7,3 @@ workflows:
       - cypress/run:
           start-command: 'npm run'
           parallelism: 4
-
-       - store_artifacts:
-          path: /tmp/artifact-1
-          destination: artifact-file
