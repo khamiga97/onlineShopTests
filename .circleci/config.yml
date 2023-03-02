@@ -9,8 +9,6 @@ workflows:
           parallel: true
           parallelism: 4
 
-          artifacts:
-      when: always
-      paths:
-        - cypress/videos/**/*
-        - cypress/screenshots/**/*
+       - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
